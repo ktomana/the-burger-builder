@@ -14,13 +14,13 @@ const reducer = (state = initialState, action) => {
       };
     case actionTypes.PURCHASE_BURGER_SUCCESS:
       const newOrder = {
-        ...action.orderData,
-        id: action.order.id
+        ...action.order,
+        id: action.id
       }
       return {
         ...state,
         loading: false,
-        orders: [...state.orders, newOrder];
+        orders: [...state.orders, newOrder]
       };
     case actionTypes.PURCHASE_BURGER_FAIL:
       return {
